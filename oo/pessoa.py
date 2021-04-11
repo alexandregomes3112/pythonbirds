@@ -11,6 +11,7 @@ class Pessoa:
 if __name__ == '__main__':
     alexandre = Pessoa(nome='Alexandre')
     pituca = Pessoa(alexandre, nome='Pituca')
+    pituca.idade = 9
     print(Pessoa.cumprimentar(pituca))
     print(id(pituca))
     print(pituca.cumprimentar())
@@ -18,3 +19,7 @@ if __name__ == '__main__':
     print(pituca.idade)
     for filho in pituca.filhos:
         print(filho.nome)
+    alexandre.sobrenome = "Gomes"
+    print(alexandre.sobrenome)
+    print(alexandre.__dict__)
+    print(pituca.__dict__)
