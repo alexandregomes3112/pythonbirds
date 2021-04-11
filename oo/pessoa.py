@@ -16,8 +16,13 @@ class Pessoa:
     def nome_att_classe(cls):
         return f'{cls} - olhos {cls.olhos}'
 
+
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
-    alexandre = Pessoa(nome='Alexandre')
+    alexandre = Homem(nome='Alexandre')
     pituca = Pessoa(alexandre, nome='Pituca')
     pituca.idade = 9
     print(Pessoa.cumprimentar(pituca))
@@ -39,3 +44,8 @@ if __name__ == '__main__':
     print (id(Pessoa.olhos), id(alexandre.olhos), id(pituca.olhos))
     print(Pessoa.metodo_estatico(), alexandre.metodo_estatico())
     print(Pessoa.nome_att_classe(), alexandre.nome_att_classe())
+    pessoa = Pessoa('Anônimo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(alexandre, Pessoa))
+    print(isinstance(alexandre, Homem))
